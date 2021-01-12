@@ -1,0 +1,11 @@
+<section class="gallery">
+    <a class="gallery__item" 
+        *ngFor="let animal of animals"
+        routerLink="/detail/{{animal.id}}">
+        <div class="gallery__item__img">
+            <img src="{{animal.image[0]}}">
+        </div>
+        <h2 class="gallery__item__name">{{ animal.name | uppercase}}</h2>
+        <div class="gallery__item__desc">{{ animal.description }} </div>
+    </a>
+</section>

@@ -1,0 +1,44 @@
+<section *ngIf="animal" class="details">
+  <div class="main-details">
+    <div class="carousel">
+      <img class="carousel__photo" src="{{animal.image[0]}}" alt="First slide">
+      <img class="carousel__photo" src="{{animal.image[1]}}" alt="Second slide">
+      <img class="carousel__photo" src="{{animal.image[2]}}" alt="Third slide">
+      <div class="carousel__button--prev" (click)="plusSlides(-1)">
+        <a class="carousel__icon">&#10094;</a>
+      </div>
+      <div class="carousel__button--next" (click)="plusSlides(1)">
+        <a class="carousel__icon">&#10095;</a>
+      </div>
+    </div>
+    <div class="specification">
+        <div class="title">
+            <h1>{{animal.name}}</h1>
+            <h3>{{animal.description}}</h3>
+        </div>
+        <hr>
+        <h3>Full spec</h3>
+        <dl>
+            <dt>Age</dt>
+            <dd>{{animal.age}} years</dd>
+            <dt>Time of visit</dt>
+            <dd>{{animal.timeVisit}} years</dd>
+            <dt>Weight</dt>
+            <dd>{{animal.weight}} kg</dd>
+            <dt>Species</dt>
+            <dd>{{animal.species}}</dd>
+            <dt>Size</dt>
+            <dd>{{animal.size}}</dd>
+            <dt>Character</dt>
+            <dd>{{animal.character[0]}} <br> {{animal.character[1]}}</dd>
+        </dl>
+    </div>
+  </div>
+  <div class="more-details">
+    <hr style="width: 100%;">
+    <h3>Description</h3>
+    <p>{{animal.descAnimal}}
+    </p>
+    <button (click)="goBack()">Back to Blog</button>
+  </div>
+</section>

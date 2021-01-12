@@ -1,0 +1,26 @@
+<section>
+    <form (submit)="onClickMe($event)">
+        <div>
+            <h1>Contact Us</h1>
+            <p>Give us a call with any questions, comments or feedback. We’re available 8am-18pm on weekdays, closed at weekends.</p>
+        </div>
+        <div class="inp-container" (click)="togglerInput(0)">
+            <input type="text" value="" name="name" id="name" required>
+            <label for="name" class="full-name" aria-hidden="true">Full name</label>
+        </div>
+        <div class="inp-container" (click)="togglerInput(1)">
+            <input type="email" value="" name="email" id="email" required>
+            <label for="email" class="e-mail" aria-hidden="true">E-mail address</label>
+        </div>
+        <div class="inp-container" (click)="togglerTextArea(0)">
+            <textarea name="message" id="message" rows="1"></textarea>
+            <label for="message" class="message" aria-hidden="true">Leave a message</label>
+        </div>
+        <div>
+            <button type="submit" class="ampstart-btn send-btn">Send</button>
+        </div>
+    </form>
+    <div *ngIf="success">
+        Subscription successful!
+    </div>
+</section>
